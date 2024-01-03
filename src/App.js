@@ -5,6 +5,8 @@ import './App.css';
 import Structure from './Structure';
 import ElementDetailModal from './ElementDetailModal'
 import SymbolPanel from './SymbolPanel'
+import ShapePanel from './ShapePanel'
+import CharacteristicPanel from './CharacteristicPanel'
 
 
 //イオン化傾向・融点・沸点などデータ見直し(根拠文献記載)
@@ -41,7 +43,7 @@ function App() {
     count % 4 === 2 ? 'ORBIT' : 'CIRCLE'
   const characteristic =
     characteristicCount % numberOfCharacteristics === 0 ? 'ORBIT' :
-    characteristicCount % numberOfCharacteristics === 1 ? '1ST_IONIZATION_ENERGY' :
+    characteristicCount % numberOfCharacteristics === 1 ? 'IONIZATION_ENERGY' :
     characteristicCount % numberOfCharacteristics === 2 ? 'ELECTRON_AFFINITY':
     characteristicCount % numberOfCharacteristics === 3 ? 'BOILING_POINT': 'MELTING_POINT'
 
@@ -49,10 +51,10 @@ function App() {
       return ((a % n) + n) % n;
     }
     
-  const handleClickUp = () => {
+  const handleShapeNumberUp = () => {
     setCount(count + 1)
   }
-  const handleClickDown = () => {
+  const handleShapeNumberDown = () => {
     setCount(count - 1)
   }
   const handleCharacteristicUp = () => {
@@ -88,18 +90,17 @@ function App() {
             onAtomicNumberUp={handleAtomicNumberUp}
             onAtomicNumberDown={handleAtomicNumberDown}
           />
+          <ShapePanel
+            shape={shape}
+            onShapeUp={handleShapeNumberUp}
+            onShapeDown={handleShapeNumberDown}
+          />
+          <CharacteristicPanel
+            characteristic={characteristic}
+            onCharacteristicUp={handleCharacteristicUp}
+            onCharacteristicDown={handleCharacteristicDown}
+          />
       
-      <div style={{ textAlign: 'center'}}>
-        <button onClick={handleClickDown}>{'◀︎'}</button>
-          &nbsp;&nbsp;<span style={{display:'inline-block',width:'100px'}}>{shape}</span>&nbsp;&nbsp;
-        <button onClick={handleClickUp}>{'▶︎'}</button>
-      </div>
-      <div style={{ textAlign: 'center' }}>
-        <button onClick={handleCharacteristicDown}>{'◀︎'}</button>
-        &nbsp;&nbsp;<span style={{display:'inline-block',width:'200px'}}>{characteristic}</span>&nbsp;&nbsp;
-        <button onClick={handleCharacteristicUp}>{'▶︎'}</button>
-      </div>
-
       <Structure
         count={count}
         characteristicCount={characteristicCount}
