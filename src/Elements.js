@@ -42,7 +42,7 @@ const Element = ({ size = 0.4, radius = 0, color = '#000000', opacity = 1, ...pr
 
     const { transitionParameter } = useSpring({
         transitionParameter: props.count,
-        config: { ...config.wobbly, duration: 1000 },
+        config: { ...config.wobbly, duration: 2000 },
     });
 
     const getColor = () => {
@@ -102,6 +102,33 @@ const Element = ({ size = 0.4, radius = 0, color = '#000000', opacity = 1, ...pr
             default:
         }
         return color
+    }
+    const getOpacity = () => {
+        const DEFAULT_OPACITY = 0.7
+        switch (props.characteristicCount % props.numberOfCharacteristics) {
+            case 0:
+                opacity=DEFAULT_OPACITY
+                break
+            case 1:
+                opacity= element['1stIonizationEnergy']===null ? 0 : 
+                DEFAULT_OPACITY
+                break
+            case 2:
+                opacity= element['electronAffinity']===null ? 0 :
+                DEFAULT_OPACITY
+                break
+            case 3:
+                opacity= element['boilingPoint']===null ? 0 :
+                DEFAULT_OPACITY
+                break
+            case 4:
+                opacity= element['meltingPoint']===null ? 0 :
+                DEFAULT_OPACITY
+                break
+
+            default:
+        }
+        return opacity
     }
 
     const getOrbitNumber = (orbit) => {
@@ -421,6 +448,7 @@ const Element = ({ size = 0.4, radius = 0, color = '#000000', opacity = 1, ...pr
                         [cardWidth, 0, 0]
                     ]}
                     color={getColor()}
+                    opacity={getOpacity()}
                     
                 />
                 {

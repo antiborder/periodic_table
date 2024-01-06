@@ -17,16 +17,16 @@ function ShapePanel(props) {
           <button className='shapeDownButton'
             onClick={props.onShapeDown}>
             {'◀︎'}
-          </button>
+          {/* </button>
           <button
             className='shape'
             onClick={props.onShapeUp}
-          >
-            {props.shape}
+          > */}
+            
           </button>
           <button className='shapeUpButton'
             onClick={props.onShapeUp}>
-            {'▶︎'}
+            {props.shape}{'▶︎'}
           </button>
         </div>
       </div>
@@ -39,11 +39,12 @@ const StyledShapePanel = styled.div`
   position: fixed;
   top: 8px;
   right: 8px;
-  background-color: white; 
-  opacity: 0.7;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  //background-color: white; 
+  //opacity: 0.7;
+  //border: 1px solid #ccc;
+  //border-radius: 10px;
+  //font-size:12px;
+  //box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   z-index: 800;
   width: 200px;
   height: 36px;
@@ -73,16 +74,28 @@ const StyledShapePanel = styled.div`
     margin:4px;
   }
   .shapeDownButton{
-    background-color:white;
-    padding:0px;
-    border:none;
+    width:50px;
+    background-color: white; 
+    opacity: 0.7;
     font-size:20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding:0px;
+
+    margin:0px;
     cursor: pointer;  
   }
   .shapeUpButton{
-    background-color:white;
+    width:250px;
+    background-color: white; 
+    opacity: 0.7;
+    text-align:right;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     padding:0px;
-    border:none;
+    margin:0px;
     font-size:20px;
     cursor: pointer;  
   }
@@ -95,14 +108,6 @@ const StyledShapePanel = styled.div`
     font-family: Arial, sans-serif;
     border:none;
     cursor: pointer;  
-  }
-
-  .symbolLabel{
-    margin:20px;
-    padding:0px; 
-    font-size:36px;
-    line-height:0;
-    font-family: Arial, sans-serif;
   }
 
 `;
