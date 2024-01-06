@@ -9,8 +9,12 @@ import ShapePanel from './ShapePanel'
 import CharacteristicPanel from './CharacteristicPanel'
 
 
-//イオン化傾向・融点・沸点などデータ見直し(根拠文献記載)
-//shapeとcharacteristicの位置を調整
+
+//特性がnullならばcardは透過。
+//特性名を日本語化
+//一時的に電子親和力などの特性を消す。
+//単位を表示
+//遷移速度を半分に。
 //京都大学に問い合わせ
 //La系列などの入る空白にフレーム
 //circleのshapeになるときに回りすぎてる。
@@ -24,9 +28,12 @@ import CharacteristicPanel from './CharacteristicPanel'
 //固体/気体と金属/非金属
 //shape変換と同時にカメラワーク
 //結晶構造
+//命名の由来の説明と画像
 
 //各指標の見方を説明。
 //各shapeの見方を説明。
+
+//イオン化傾向・融点・沸点のデータは見直した。(Wikipedia)誤差範囲や根拠文献は後回し。
 
 function App() {
   const numberOfShapes = 4
@@ -38,14 +45,14 @@ function App() {
   const [isModalVisible, setIsModalVisible] = useState(0)
 
   const shape =
-    count % 4 === 0 ? 'TABLE' :
+    count % 4 === 0 ? 'STANDARD' :
     count % 4 === 1 ? 'SPIRAL' : 
-    count % 4 === 2 ? 'ORBIT' : 'CIRCLE'
+    count % 4 === 2 ? 'BLOCK' : 'DISC'
   const characteristic =
-    characteristicCount % numberOfCharacteristics === 0 ? 'ORBIT' :
-    characteristicCount % numberOfCharacteristics === 1 ? 'IONIZATION_ENERGY' :
-    characteristicCount % numberOfCharacteristics === 2 ? 'ELECTRON_AFFINITY':
-    characteristicCount % numberOfCharacteristics === 3 ? 'BOILING_POINT': 'MELTING_POINT'
+    characteristicCount % numberOfCharacteristics === 0 ? 'STANDARD' :
+    characteristicCount % numberOfCharacteristics === 1 ? 'イオン化エネルギー' ://IONIZATION_ENERGY
+    characteristicCount % numberOfCharacteristics === 2 ? '電子親和力':
+    characteristicCount % numberOfCharacteristics === 3 ? '沸点': '融点'
 
     function modulo(a, n) {
       return ((a % n) + n) % n;
