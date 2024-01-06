@@ -13,6 +13,7 @@ function ShapePanel(props) {
       <div className='modal-content'>
 
         <div className='shapeBox'>
+          <div className='shapeLabel'> 形：</div>
           <button className='shapeDownButton'
             onClick={props.onShapeDown}>
             {'◀︎'}
@@ -42,10 +43,9 @@ const StyledShapePanel = styled.div`
   opacity: 0.7;
   border: 1px solid #ccc;
   border-radius: 10px;
-  font-size:12px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   z-index: 800;
-  width: 120px;
+  width: 200px;
   height: 36px;
   padding:0px;
   text-align: center;
@@ -60,6 +60,11 @@ const StyledShapePanel = styled.div`
   }
   .modal-content::-webkit-scrollbar{
     display: none;
+  }
+  .shapeLabel{
+    padding:0px; 
+    font-size:16px;
+    padding-left:4px;
   }
   .shapeBox{
     display:flex;

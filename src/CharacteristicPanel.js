@@ -14,6 +14,7 @@ function CharacteristicPanel(props) {
       <div className='modal-content'>
       
         <div className='characteristicBox'>
+        <div className='characteristicLabel'> 色：</div>
           <button className='characteristicDownButton'
             onClick={props.onCharacteristicDown}>
               {'◀︎'}
@@ -46,7 +47,7 @@ const StyledCharacteristicPanel = styled.div`
   font-size:12px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   z-index: 800;
-  width: 250px;
+  width: 280px;
   height: 36px;
   padding:0px;
   text-align: center;
@@ -61,6 +62,11 @@ const StyledCharacteristicPanel = styled.div`
   }
   .modal-content::-webkit-scrollbar{
     display: none;
+  }
+  .characteristicLabel{
+    padding:0px; 
+    font-size:16px;
+    padding-left:4px;
   }
   .characteristicBox{
     display:flex;

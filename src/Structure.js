@@ -7,7 +7,7 @@ import Elements from './Elements.js';
 
 const Structure = (props) => {
 
-    const cameraPosition = [0, 0, 15]; // カメラの位置
+    const cameraPosition = [0, 0, 18]; // カメラの位置
 
 
     return (
