@@ -17,13 +17,13 @@ function ElementDetailModal(props) {
     >
       <div className='modal-content'>
         <div className='atomicNumberLabel'>
-                {element.atomicNumber}
+                　{/* {element.atomicNumber} */}
         </div>
         <div className='symbolLabel'>
             {element.symbol}
         </div>
         <div className='nameLabel'>
-            {element.name}
+            {element.japaneseName}
         </div>
 
         <div className='propertyBox1'>
@@ -44,8 +44,11 @@ function ElementDetailModal(props) {
               {element.metallic}
           </div>
           <div>
-              常温で{element.state}
+              常温で{element.state==='solid'?'固体':element.state==='liquid'?'液体':'気体'}
           </div>
+          </div>
+
+<div className='propertyBox3'>
 
           <div>
               原子量：{element.atomicMass}
@@ -56,21 +59,21 @@ function ElementDetailModal(props) {
           <div>
               沸点：{element.boilingPoint}℃
           </div>
-          <div>
-              第一イオン化エネルギー：{element['1stIonizationEnergy']}
+          <div className='firstIonizationEnergy'>
+              第一イオン化エネルギー：{element['1stIonizationEnergy']} kJ/mol
               </div>
           <div>
-              電子親和力：{element.electronAffinity}
+              電子親和力：{element.electronAffinity} kJ/mol
           </div>
           <div>
-              密度：{element.density}
+              密度：{element.density} g/cm3
           </div>
         </div>
         
-
+        <div className='electronConfigurationBox'>
         <div>＜電子配置＞</div>
         <div 
-        style={{ textAlign: 'left', marginLeft: '20px' }}>
+        style={{ textAlign: 'left', marginLeft: '100px', fontSize:'16px'}}>
             {Object.entries(element.electron).map(([key, value]) => (
                 <div key={key}>
                     {key}:&nbsp;&nbsp;&nbsp;&nbsp;
@@ -81,8 +84,8 @@ function ElementDetailModal(props) {
                     {/* </ul> */}
                 </div>
             ))}
+          </div>
         </div>
-
         
         <StyledCloseButton onClick={handleSubmit}>&times;</StyledCloseButton>
       </div>
@@ -144,7 +147,7 @@ const StyledElementDetailModal = styled.div`
 
     .propertyBox1{
       width:80%;
-      background-color: #EEE;
+      background-color: #fff;
       font-size: 16px;
       border-radius: 8px;
       margin:20px auto;
@@ -153,8 +156,32 @@ const StyledElementDetailModal = styled.div`
     }
 
     .propertyBox2{
+      width:80%;
+      background-color: #ddd;
+      font-size: 16px;
+      border-radius: 8px;
+      margin:20px auto;
+
+    }
+    .propertyBox3{
+      width:80%;
+      background-color: #ddd;
+      font-size: 16px;
+      border-radius: 8px;
+      margin:20px auto;
+
+    }
+
+    .firstIonizationEnergy{
       font-size: 12px;
-      margin:20px;
+    }
+
+    .electronConfigurationBox{
+      width:80%;
+      background-color: #ddd;
+      font-size: 16px;
+      border-radius: 8px;
+      margin:20px auto;
 
     }
 

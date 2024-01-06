@@ -18,16 +18,12 @@ function CharacteristicPanel(props) {
           <button className='characteristicDownButton'
             onClick={props.onCharacteristicDown}>
               {'◀︎'}
-          </button>
-            <button className='characteristic'
-            onClick={props.onCharacteristicUp}
-            >
-              {props.characteristic}
-            </button>
+          </button>              
+            
           <button className='characteristicUpButton'
              onClick={props.onCharacteristicUp}
            >
-            {'▶︎'}
+            {props.characteristic}{'▶︎'}
           </button>
         </div>
       </div>
@@ -40,12 +36,6 @@ const StyledCharacteristicPanel = styled.div`
   position: fixed;
   top: 50px;
   right: 8px;
-  background-color: white; 
-  opacity: 0.7;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  font-size:12px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   z-index: 800;
   width: 280px;
   height: 36px;
@@ -75,16 +65,27 @@ const StyledCharacteristicPanel = styled.div`
     margin:4px;
   }
   .characteristicDownButton{
-    background-color:transparent;
+    width:50px;
+    background-color: white; 
+    opacity: 0.7;
+    text-align:right;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     padding:0px;
-    border:none;
     font-size:20px;
     cursor: pointer;  
+
   }
   .characteristicUpButton{
-    background-color:transparent;
+    width:350px;
+    background-color: white; 
+    opacity: 0.7;
+    text-align:right;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     padding:0px;
-    border:none;
     font-size:20px;
     cursor: pointer;  
   }
@@ -97,14 +98,6 @@ const StyledCharacteristicPanel = styled.div`
     font-family: Arial, sans-serif;
     border:none;
     cursor: pointer;  
-  }
-
-  .symbolLabel{
-    margin:20px;
-    padding:0px; 
-    font-size:36px;
-    line-height:0;
-    font-family: Arial, sans-serif;
   }
 
 `;
