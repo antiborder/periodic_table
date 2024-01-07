@@ -62,7 +62,7 @@ const Element = ({ size = 0.4, radius = 0, color = '#000000', opacity = 1, ...pr
                             '#FF8888' :
                             '#FF66FF'
                 break
-            case 1:
+            case 3:
                 max = 2372
                 min = 370
                 weight = -(element['1stIonizationEnergy'] - min) / (max - min) + 1
@@ -71,34 +71,33 @@ const Element = ({ size = 0.4, radius = 0, color = '#000000', opacity = 1, ...pr
                 v = Math.pow(weight, 2) * 100
                 color = '#' + convert.hsv.hex(h, s, v)
                 break
-            case 2:
+            case 4:
                 max = 349
                 min = -116
                 weight = (element['electronAffinity'] - min) / (max - min)
-                h = -Math.pow(weight, 2) * 120 + 360
+                h = -Math.pow(weight, 2) * 120 + 330
                 s = Math.pow(weight, 0.4) * 100
                 v = Math.pow(weight, 0.6) * 100
                 color = '#' + convert.hsv.hex(h, s, v)
                 break
-            case 3:
+            case 1:
                 max = 5930
-                min = -270
+                min = -273
                 weight = -(element['boilingPoint'] - min) / (max - min) + 1
-                h = Math.pow(weight, 4) * 90 + 90
-                s = Math.pow(weight, 1) * 100
-                v = Math.pow(weight, 0.7) * 100
+                h = Math.pow(weight, 1.5) * 180 + 0
+                s = 100//Math.pow(weight, 1) * 100
+                v = 100//Math.pow(weight, 0.7) * 100
                 color = '#' + convert.hsv.hex(h, s, v)
                 break
-            case 4:
-                max = 4300
+            case 2:
+                max = 5930
                 min = -273
                 weight = -(element['meltingPoint'] - min) / (max - min) + 1
-                h = Math.pow(weight, 4) * 90 + 30
-                s = Math.pow(weight, 1) * 100
-                v = Math.pow(weight, 0.7) * 100
+                h = Math.pow(weight, 1.5) * 180 + 0
+                s = 100//Math.pow(weight, 1) * 100
+                v = 100//Math.pow(weight, 0.7) * 100
                 color = '#' + convert.hsv.hex(h, s, v)
                 break
-
             default:
         }
         return color
@@ -109,19 +108,19 @@ const Element = ({ size = 0.4, radius = 0, color = '#000000', opacity = 1, ...pr
             case 0:
                 opacity=DEFAULT_OPACITY
                 break
-            case 1:
+            case 3:
                 opacity= element['1stIonizationEnergy']===null ? 0 : 
                 DEFAULT_OPACITY
                 break
-            case 2:
+            case 4:
                 opacity= element['electronAffinity']===null ? 0 :
                 DEFAULT_OPACITY
                 break
-            case 3:
+            case 1:
                 opacity= element['boilingPoint']===null ? 0 :
                 DEFAULT_OPACITY
                 break
-            case 4:
+            case 2:
                 opacity= element['meltingPoint']===null ? 0 :
                 DEFAULT_OPACITY
                 break
@@ -476,7 +475,7 @@ const Element = ({ size = 0.4, radius = 0, color = '#000000', opacity = 1, ...pr
                     <Text
                         position={[0.4, -0.5, 0.01]}
                         fontSize={0.5}
-                        color={props.characteristicCount % props.numberOfCharacteristics === 0 ? '#000' : '#fff'}
+                        color={props.characteristicCount % props.numberOfCharacteristics <= 2  ? '#000' : '#fff'}
                         anchorX="center" anchorY="middle">
                         {element.symbol}
 
