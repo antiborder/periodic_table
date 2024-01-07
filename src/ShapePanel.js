@@ -87,7 +87,7 @@ const StyledShapePanel = styled.div`
     cursor: pointer;  
   }
   .shapeUpButton{
-    width:250px;
+    width:120px;
     background-color: white; 
     opacity: 0.7;
     text-align:right;

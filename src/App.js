@@ -43,14 +43,14 @@ function App() {
   const [isModalVisible, setIsModalVisible] = useState(0)
 
   const shape =
-    count % 4 === 0 ? 'STANDARD' :
-    count % 4 === 1 ? 'SPIRAL' : 
-    count % 4 === 2 ? 'BLOCK' : 'DISC'
+    count % 4 === 0 ? 'Standard' :
+    count % 4 === 1 ? 'Spiral' : 
+    count % 4 === 2 ? 'Block' : 'Disc'
   const characteristic =
-    characteristicCount % numberOfCharacteristics === 0 ? 'STANDARD' :
-    characteristicCount % numberOfCharacteristics === 1 ? 'イオン化エネルギー' ://IONIZATION_ENERGY
-    characteristicCount % numberOfCharacteristics === 2 ? '電子親和力':
-    characteristicCount % numberOfCharacteristics === 3 ? '沸点': '融点'
+    characteristicCount % numberOfCharacteristics === 0 ? 'Block' :
+    characteristicCount % numberOfCharacteristics === 1 ? '沸点' ://IONIZATION_ENERGY
+    characteristicCount % numberOfCharacteristics === 2 ? '融点':
+    characteristicCount % numberOfCharacteristics === 3 ? 'イオン化エネルギー': '電子親和力'
 
     function modulo(a, n) {
       return ((a % n) + n) % n;
