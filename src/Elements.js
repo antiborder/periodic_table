@@ -36,7 +36,7 @@ const Element = ({ size = 0.4, radius = 0, color = '#000000', opacity = 1, ...pr
     const element = elements[props.atomicNumber.toString()]
 
     const [hovered, setHovered] = useState(false);
-    const [bubbleHovered, setBubbleHovered] = useState(false);
+    const [, setBubbleHovered] = useState(false);
     const cardWidth = 0.8
     const cardHeight = 0.8
 
@@ -75,7 +75,7 @@ const Element = ({ size = 0.4, radius = 0, color = '#000000', opacity = 1, ...pr
                 max = 349
                 min = -116
                 weight = (element['electronAffinity'] - min) / (max - min)
-                h = -Math.pow(weight, 2) * 120 + 330
+                h = -Math.pow(weight, 1) * 120 + 330
                 s = Math.pow(weight, 0.4) * 100
                 v = Math.pow(weight, 0.6) * 100
                 color = '#' + convert.hsv.hex(h, s, v)
@@ -319,14 +319,14 @@ const Element = ({ size = 0.4, radius = 0, color = '#000000', opacity = 1, ...pr
     const z2 = cartesianToCylindrical(orbitalPosition)[2]
 
     const radius3 = element['tableRow'] <= 7 ?
-        element['tableRow'] + 3 :
-        element['tableRow'] + 0
+        element['tableRow'] + 2 +element['tableColumn']/18 :
+        element['tableRow'] - 1 +element['tableColumn']/32
     const theta3 = element['tableRow'] <= 7 ?
         (element['tableColumn'] <= 2 ?
             element['tableColumn'] / 32 * 2 * Math.PI:
             (element['tableColumn'] + 14) / 32 * 2 * Math.PI) + Math.PI :
         (element['tableColumn']) / 32 * 2 * Math.PI+ Math.PI
-    const z3 = -10
+    const z3 = -12
 
     const revalueTheta = (theta) => {
         return Math.PI < theta ? theta - 2 * Math.PI : theta
@@ -390,6 +390,19 @@ const Element = ({ size = 0.4, radius = 0, color = '#000000', opacity = 1, ...pr
             return getTransition3to4Coordinate(t)         
         }
     }
+    const getTilt = (t) => {
+        
+        t = t % props.numberOfShapes
+        if (0 <= t && t <= 1) {
+            return [0,0,0]
+        } else if (1 < t && t <= 2) {
+            return [0,0,0]
+        } else if (2 < t && t <= 3) {
+            return [-Math.PI/2 * Math.pow(t-2,10) ,0,0]
+        } else if (3 < t && t <= 4) {
+            return [-Math.PI/2 * Math.pow(4-t,10) ,0,0]
+        }
+    }
 
     const getRotationAngle = (t) => {
         t = t % props.numberOfShapes
@@ -439,6 +452,9 @@ const Element = ({ size = 0.4, radius = 0, color = '#000000', opacity = 1, ...pr
             {/* <group
 
             > */}
+            <animated.mesh {...props}
+                rotation={transitionParameter.to(t => getTilt(t))}
+            >
                 <Quadrilateral {...props}
                     points={[
                         [0, 0, 0],
@@ -488,6 +504,7 @@ const Element = ({ size = 0.4, radius = 0, color = '#000000', opacity = 1, ...pr
                         {element.name}
                     </Text>
                 </group>
+            </animated.mesh>
 
                 <Html
                     zIndexRange={[100, 200]}
