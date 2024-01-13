@@ -10,6 +10,18 @@ function ElementDetailModal(props) {
     props.setIsModalVisible(0);
   };
 
+  const shell = element.orbit.charAt(0)==='1'? 'K':
+    element.orbit.charAt(0)==='2'? 'L':
+    element.orbit.charAt(0)==='3'? 'M':
+    element.orbit.charAt(0)==='4'? 'N':
+    element.orbit.charAt(0)==='5'? 'O':
+    element.orbit.charAt(0)==='6'? 'P':
+    element.orbit.charAt(0)==='7'? 'Q':''
+
+  const metallic = element.metallic==='metal'? '金属':
+    element.metallic==='nonmetal'? '非金属':
+    element.metallic==='semimetal'? '半金属':''
+
   return (
 
     <StyledElementDetailModal
@@ -38,10 +50,13 @@ function ElementDetailModal(props) {
 
         <div className='propertyBox2'>
         <div>
-              {element.family}族
+              {element.family} 族
           </div>
           <div>
-              {element.metallic}
+            {shell} 殻
+          </div>
+          <div>
+              {metallic}
           </div>
           <div>
               常温で{element.state==='solid'?'固体':element.state==='liquid'?'液体':'気体'}

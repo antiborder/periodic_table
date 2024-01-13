@@ -82,6 +82,7 @@ const StyledSymbolPanel = styled.div`
   .symbolLabel{
     width:200px;
     height:100px;
+
     margin-top:12px;
     padding:0px; 
   }
@@ -89,6 +90,7 @@ const StyledSymbolPanel = styled.div`
   .symbolButton{
     background-color:transparent;
     font-size:36px;
+    color: blue;
     padding:0px 0px 1px ;
     border:none;
     cursor: pointer;  

@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 import React, { useState } from 'react';
-
+import { useEffect } from 'react';
 import './App.css';
 import Structure from './Structure';
 import ElementDetailModal from './ElementDetailModal'
@@ -10,20 +10,17 @@ import CharacteristicPanel from './CharacteristicPanel'
 
 
 
-
-//電子親和力などの特性もチェっく。
 //京都大学に問い合わせ
-//円形状のカードを倒す
+
+//固体/気体と金属/非金属で色分け
+//モーダルに電子配置の絵を追加
+//日野に公開
+
 //La系列などの入る空白にフレーム
 //circleのshapeになるときに回りすぎてる。
 //軌道の三次元表でフレームを表示
-//左上のパネルの文字は青系。クリックできるところは浮かせる。
 //ボタンを押したままでカーソルが移動。
-//モーダルに電子配置の絵を追加
-//モーダルに殻を追加
-//画面幅が狭ければスパイラル表示に。
 //カードの角を丸める
-//固体/気体と金属/非金属
 //shape変換と同時にカメラワーク
 //結晶構造
 //命名の由来の説明と画像
@@ -37,7 +34,13 @@ function App() {
   const numberOfShapes = 4
   const numberOfCharacteristics = 5
   const numberOfElements = 118
-  const [count, setCount] = useState(1000)
+
+  const [windowSize, setWindowSize] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight
+  });
+
+  const [count, setCount] = useState(windowSize.width>800 ? 1000 : 1001)
   const [characteristicCount, setCharacteristicCount] = useState(0)
   const [atomicNumber, setAtomicNumber] = useState(1)
   const [isModalVisible, setIsModalVisible] = useState(0)
@@ -78,11 +81,22 @@ function App() {
       )
   }
 
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight
+      });
+    };
+
+    window.addEventListener("resize", handleResize);
+    
+  }, []);
+
+
   return (
 
-    
     <>
-
           {isModalVisible===1 && 
           <ElementDetailModal
             setIsModalVisible={setIsModalVisible}
