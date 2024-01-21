@@ -9,16 +9,14 @@ import ShapePanel from './ShapePanel'
 import CharacteristicPanel from './CharacteristicPanel'
 
 
-
-//京都大学に問い合わせ
-
+//形状変形：普通→disc→spiral→elementouch→block→普通
+//circleのshapeになるときに回りすぎてる。
 //固体/気体と金属/非金属で色分け
-//モーダルに電子配置の絵を追加
 //日野に公開
 
 //La系列などの入る空白にフレーム
-//circleのshapeになるときに回りすぎてる。
 //軌道の三次元表でフレームを表示
+//Discの計上で弧を表示。
 //ボタンを押したままでカーソルが移動。
 //カードの角を丸める
 //shape変換と同時にカメラワーク

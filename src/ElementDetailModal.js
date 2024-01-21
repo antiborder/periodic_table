@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import elements from './constants/elements'
+import AtomicModel from './AtomicModel';
 
 
 function ElementDetailModal(props) {
@@ -47,6 +48,12 @@ function ElementDetailModal(props) {
               原子番号: {element.atomicNumber}
           </div>
         </div>
+
+        <AtomicModel 
+          atomicNumber={props.atomicNumber}
+           symbol = {element.symbol}
+           electron = {element.electron}
+        />
 
         <div className='propertyBox2'>
         <div>
