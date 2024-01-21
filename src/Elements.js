@@ -55,13 +55,14 @@ const Element = ({ size = 0.4, radius = 0, color = '#000000', opacity = 1, ...pr
         switch (props.characteristicCount % props.numberOfCharacteristics) {
             case 0:
                 color = element.orbit.slice(-1) === 's' ?
-                    '#8888FF' :
+                    '#FF777A' :
                     element.orbit.slice(-1) === 'p' ?
-                        '#88FF88' :
+                        '#FFBC20' :
                         element.orbit.slice(-1) === 'd' ?
-                            '#FF8888' :
-                            '#FF66FF'
+                            '#67BCEE' :
+                            '#6ADE68'
                 break
+
             case 3:
                 max = 2372
                 min = 370
