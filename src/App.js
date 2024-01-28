@@ -1,4 +1,3 @@
-// import logo from './logo.svg';
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import './App.css';
@@ -9,10 +8,13 @@ import ShapePanel from './ShapePanel'
 import CharacteristicPanel from './CharacteristicPanel'
 
 
-//形状変形：普通→disc→spiral→elementouch→block→普通
-//circleのshapeになるときに回りすぎてる。
-//固体/気体と金属/非金属で色分け
+
 //日野に公開
+
+//固体/気体と金属/非金属で色分け
+//色見本を表示
+//各指標の見方を説明。
+//各shapeの見方を説明。
 
 //La系列などの入る空白にフレーム
 //軌道の三次元表でフレームを表示
@@ -23,13 +25,11 @@ import CharacteristicPanel from './CharacteristicPanel'
 //結晶構造
 //命名の由来の説明と画像
 //多言語対応
-//各指標の見方を説明。
-//各shapeの見方を説明。
 
 //イオン化傾向・融点・沸点のデータは見直した。(Wikipedia)誤差範囲や根拠文献は後回し。
 
 function App() {
-  const numberOfShapes = 4
+  const numberOfShapes = 5
   const numberOfCharacteristics = 5
   const numberOfElements = 118
 
@@ -44,9 +44,11 @@ function App() {
   const [isModalVisible, setIsModalVisible] = useState(0)
 
   const shape =
-    count % 4 === 0 ? 'Standard' :
-    count % 4 === 1 ? 'Spiral' : 
-    count % 4 === 2 ? 'Block' : 'Disc'
+    count % numberOfShapes === 0 ? 'Standard' :
+    count % numberOfShapes === 1 ? 'Spiral' : 
+    count % numberOfShapes === 2 ? 'Disc' : 
+    count % numberOfShapes === 3 ? 'Elementouch' : 'Block'
+
   const characteristic =
     characteristicCount % numberOfCharacteristics === 0 ? 'Block' :
     characteristicCount % numberOfCharacteristics === 1 ? '沸点' ://IONIZATION_ENERGY
