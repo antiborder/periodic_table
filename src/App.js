@@ -38,7 +38,7 @@ function App() {
     height: window.innerHeight
   });
 
-  const [count, setCount] = useState(windowSize.width>800 ? 1000 : 1001)
+  const [count, setCount] = useState(windowSize.width>800 ? 1000 : 1003)
   const [characteristicCount, setCharacteristicCount] = useState(0)
   const [atomicNumber, setAtomicNumber] = useState(1)
   const [isModalVisible, setIsModalVisible] = useState(0)

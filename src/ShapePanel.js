@@ -39,14 +39,8 @@ const StyledShapePanel = styled.div`
   position: fixed;
   top: 8px;
   right: 8px;
-  //background-color: white; 
-  //opacity: 0.7;
-  //border: 1px solid #ccc;
-  //border-radius: 10px;
-  //font-size:12px;
-  //box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   z-index: 800;
-  width: 200px;
+  width: 280px;
   height: 36px;
   padding:0px;
   text-align: center;
@@ -87,7 +81,7 @@ const StyledShapePanel = styled.div`
     cursor: pointer;  
   }
   .shapeUpButton{
-    width:120px;
+    width:350px;
     background-color: white; 
     opacity: 0.7;
     text-align:right;
@@ -101,7 +95,7 @@ const StyledShapePanel = styled.div`
   }
   
   .shape{
-    width:200px;
+    width:240px;
     background-color:transparent;
     padding:0px; 
     font-size:20px;
