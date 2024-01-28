@@ -62,7 +62,7 @@ const elements = {
         'tableColumn': 1,
         'spiralRow': 1,
         'spiralColumn': 6,
-        'winding': 0,
+        'winding': 1,
         'orbit': '2s',
         'electron': {
             '1': { 's': 2 },
@@ -88,7 +88,7 @@ const elements = {
         'tableColumn': 2,
         'spiralRow': 1,
         'spiralColumn': 7,
-        'winding': 0,
+        'winding': 1,
         'orbit': '2s',
         'electron': {
             '1': { 's': 2 },
@@ -270,7 +270,7 @@ const elements = {
         'tableColumn': 1,
         'spiralRow': 2,
         'spiralColumn': 6,
-        'winding': 0,
+        'winding': 1,
         'orbit': '3s',
         'electron': {
             '1': { 's': 2 },
@@ -297,7 +297,7 @@ const elements = {
         'tableColumn': 2,
         'spiralRow': 2,
         'spiralColumn': 7,
-        'winding': 0,
+        'winding': 1,
         'orbit': '3s',
         'electron': {
             '1': { 's': 2 },
@@ -1513,7 +1513,7 @@ const elements = {
         'tableColumn': 1,
         'spiralRow': 7,
         'spiralColumn': 6,
-        'winding': 2,
+        'winding': 1,
         'orbit': '6s',
         'electron': {
             '1': { 's': 2 },
@@ -1543,7 +1543,7 @@ const elements = {
         'tableColumn': 2,
         'spiralRow': 7,
         'spiralColumn': 7,
-        'winding': 2,
+        'winding': 1,
         'orbit': '6s',
         'electron': {
             '1': { 's': 2 },
@@ -1874,7 +1874,7 @@ const elements = {
         'tableColumn': 13,
         'spiralRow': 8,
         'spiralColumn': 10,
-        'winding': 2,
+        'winding': 1,
         'orbit': '4f',
         'electron': {
             '1': { 's': 2 },
@@ -1904,7 +1904,7 @@ const elements = {
         'tableColumn': 14,
         'spiralRow': 8,
         'spiralColumn': 11,
-        'winding': 2,
+        'winding': 1,
         'orbit': '4f',
         'electron': {
             '1': { 's': 2 },
@@ -1934,7 +1934,7 @@ const elements = {
         'tableColumn': 15,
         'spiralRow': 8,
         'spiralColumn': 12,
-        'winding': 2,
+        'winding': 1,
         'orbit': '4f',
         'electron': {
             '1': { 's': 2},
@@ -1964,7 +1964,7 @@ const elements = {
         'tableColumn': 16,
         'spiralRow': 8,
         'spiralColumn': 13,
-        'winding': 2,
+        'winding': 1,
         'orbit': '4f',
         'electron': {
             '1': { 's': 2},
@@ -1994,7 +1994,7 @@ const elements = {
         'tableColumn': 17,
         'spiralRow': 8,
         'spiralColumn': 14,
-        'winding': 2,
+        'winding': 1,
         'orbit': '5d',
         'electron': {
             '1': { 's': 2},
@@ -2476,7 +2476,7 @@ const elements = {
         'tableColumn': 1,
         'spiralRow': 10,
         'spiralColumn': 6,
-        'winding': 2,
+        'winding': 1,
         'orbit': '7s',
         'electron': {
             '1': { 's': 1 },
@@ -2507,7 +2507,7 @@ const elements = {
         'tableColumn': 2,
         'spiralRow': 10,
         'spiralColumn': 7,
-        'winding': 2,
+        'winding': 1,
         'orbit': '7s',
         'electron': {
             '1': { 's': 2 },
@@ -2848,7 +2848,7 @@ const elements = {
         'tableColumn': 13,
         'spiralRow': 11,
         'spiralColumn': 10,
-        'winding': 2,
+        'winding': 1,
         'orbit': '5f',
         'electron': {
             '1': { 's': 2},
@@ -2879,7 +2879,7 @@ const elements = {
         'tableColumn': 14,
         'spiralRow': 11,
         'spiralColumn': 11,
-        'winding': 2,
+        'winding': 1,
         'orbit': '5f',
         'electron': {
             '1': { 's': 2},
@@ -2910,7 +2910,7 @@ const elements = {
         'tableColumn': 15,
         'spiralRow': 11,
         'spiralColumn': 12,
-        'winding': 2,
+        'winding': 1,
         'orbit': '5f',
         'electron': {
             '1': { 's': 2},
@@ -2941,7 +2941,7 @@ const elements = {
         'tableColumn': 16,
         'spiralRow': 11,
         'spiralColumn': 13,
-        'winding': 2,
+        'winding': 1,
         'orbit': '5f',
         'electron': {
             '1': { 's': 2},
@@ -2972,7 +2972,7 @@ const elements = {
         'tableColumn': 17,
         'spiralRow': 11,
         'spiralColumn': 14,
-        'winding': 2,
+        'winding': 1,
         'orbit': '6d',
         'electron': {
             '1': { 's': 2 },
